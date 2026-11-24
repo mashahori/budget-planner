@@ -9,7 +9,21 @@ npm install
 npm run dev     # http://localhost:3000
 ```
 
-Остальные команды: `npm run build`, `npm run start`, `npm run lint`.
+Линт: `npm run lint`.
+
+## Сборка для GitHub Pages
+
+```bash
+npm run build
+```
+
+Статический сайт собирается в папку `out/` — её содержимое и публикуется на GitHub Pages. Файл `.nojekyll` внутри нужен, чтобы Pages не выбросил папку `_next`.
+
+По умолчанию сборка рассчитана на корень домена (`username.github.io` или свой домен). Если сайт открывается по адресу вида `username.github.io/budget-planner/`, перед сборкой задайте путь:
+
+```powershell
+$env:PAGES_BASE_PATH = "/budget-planner"; npm run build
+```
 
 ## Структура
 
