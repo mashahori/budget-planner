@@ -1,0 +1,1 @@
+export const MAIN_WEBSITE_URL = 'https://meow-budget-mashahori.msk1.amvera.tech/'
