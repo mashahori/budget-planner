@@ -14,15 +14,17 @@ npm run dev     # http://localhost:3000
 ## Сборка для GitHub Pages
 
 ```bash
-npm run build
+npm run build:pages
 ```
 
-Статический сайт собирается в папку `out/` — её содержимое и публикуется на GitHub Pages. Файл `.nojekyll` внутри нужен, чтобы Pages не выбросил папку `_next`.
+Скрипт собирает статический сайт с путём `/budget-planner` (переменная `PAGES_BASE_PATH`, по умолчанию `/budget-planner`) и копирует результат из `out/` в папку `docs/`. В настройках GitHub Pages нужно выбрать: **Deploy from a branch → main → /docs**.
 
-По умолчанию сборка рассчитана на корень домена (`username.github.io` или свой домен). Если сайт открывается по адресу вида `username.github.io/budget-planner/`, перед сборкой задайте путь:
+Файл `.nojekyll` внутри нужен, чтобы Pages не выбросил папку `_next`; он копируется из `public/` автоматически.
 
-```powershell
-$env:PAGES_BASE_PATH = "/budget-planner"; npm run build
+Для сайта в корне домена (`username.github.io` или свой домен) задайте пустой путь:
+
+```bash
+PAGES_BASE_PATH= npm run build:pages
 ```
 
 ## Структура
